@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 function Sidebar() {
   const [open, setOpen] = useState(true);
   const Menus = [
     { title: "Dashboard", src: "Chart_fill", path: "/dashboard" },
     { title: "Chat", src: "Chat", path: "/inbox" },
-    { title: "Account", src: "User", gap: true, path: "/accounts" },
+    { title: "Account", src: "User", gap: true, path: "/account" },
     { title: "News", src: "Calendar", path: "/schedule" },
     { title: "Search", src: "Search", path: "/search" },
     { title: "Analytics", src: "Chart", path: "/analytics" },
@@ -26,19 +26,26 @@ function Sidebar() {
        border-2 rounded-full ${!open && "rotate-180"}`}
         onClick={() => setOpen(!open)}
       />
+
       <div className="flex gap-x-4 items-center">
-        <img
-          src="./src/assets/logo.png"
-          className={`cursor-pointer duration-500 ${open && "rotate-[360deg]"}`}
-        />
-        <h1
-          className={`text-white origin-left font-medium text-xl duration-200 ${
-            !open && "scale-0"
-          }`}
-        >
-          {/* WiseWealth */}
-          <span className="text-blue-400">WiseW</span>ealth
-        </h1>
+        <Link to={"/"}>
+          <img
+            src="./src/assets/logo.png"
+            className={`cursor-pointer duration-500 ${
+              open && "rotate-[360deg]"
+            }`}
+          />
+        </Link>
+        <Link to={"/"}>
+          <h1
+            className={`text-white origin-left font-medium text-xl duration-200 ${
+              !open && "scale-0"
+            }`}
+          >
+            {/* WiseWealth */}
+            <span className="text-blue-400">WiseW</span>ealth
+          </h1>
+        </Link>
       </div>
       <ul className="pt-6">
         {Menus.map((Menu, index) => (
