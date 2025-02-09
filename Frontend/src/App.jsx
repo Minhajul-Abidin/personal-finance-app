@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
-    <div>
+    <div className="">
       <BrowserRouter>
         <Header />
         <Routes>

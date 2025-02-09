@@ -21,9 +21,9 @@ const Navigation = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="fixed bottom-0 left-0 w-full max-h-[4.4rem] px-6 py-3 bg-white border-t shadow-md rounded-t-2xl sm:max-h-[5rem] sm:py-4">
+    <div className="fixed bottom-0 left-0 w-full max-h-[4.4rem] px-6 py-3 bg-gray-800 border-t shadow-md rounded-t-2xl sm:max-h-[5rem] sm:py-4">
       {/* Navigation Menu */}
-      <ul className="flex justify-between w-full px-4 sm:px-6 md:px-8 lg:px-12">
+      <ul className="flex justify-between w-full px-auto sm:px-6 md:px-8 lg:px-12">
         {Menus.map((menu, i) => (
           <li key={i} className="w-16 text-center">
             <button
@@ -31,7 +31,7 @@ const Navigation = () => {
                 setActive(i);
                 navigate(menu.path);
               }}
-              className={`flex flex-col items-center p-2 rounded-lg transition-all duration-300 
+              className={`flex flex-col items-center p-2 w-full rounded-lg transition-all duration-300 text-white
                 ${
                   active === i
                     ? "bg-rose-500 text-white shadow-lg"
