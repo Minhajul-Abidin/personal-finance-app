@@ -1,5 +1,3 @@
-import React from "react";
-
 const Profile = () => {
   // Dummy data (Replace this with actual data from your backend)
   const income = 50000; // Example income
@@ -7,8 +5,8 @@ const Profile = () => {
   const balance = income - expenses;
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100">
-      <div className="bg-white p-6 rounded-2xl shadow-lg w-96">
+    <div className="flex justify-center items-center w-full bg-gray-100">
+      <div className="bg-white w-full p-6 rounded-2xl shadow-lg">
         {/* Profile Section */}
         <div className="flex flex-col items-center">
           <img
@@ -27,7 +25,11 @@ const Profile = () => {
             <p className="text-green-600 font-semibold">Income: ₹{income}</p>
             <p className="text-red-600 font-semibold">Expenses: ₹{expenses}</p>
             <hr className="my-2" />
-            <p className={`font-semibold ${balance >= 0 ? "text-green-700" : "text-red-700"}`}>
+            <p
+              className={`font-semibold ${
+                balance >= 0 ? "text-green-700" : "text-red-700"
+              }`}
+            >
               Balance: ₹{balance}
             </p>
           </div>
